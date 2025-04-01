@@ -20,26 +20,8 @@ Findr is a demo project for a simple Lost & Found system, designed for education
 - **Node.js** (for React frontend)
 - **MongoDB** (for the database)
 
-### Setup Steps
 
-1. To Clone the repository:
-    ```bash
-    git clone https://github.com/YOUR_GITHUB_USERNAME/findr-lost-and-found.git
-    cd findr-lost-and-found
-    ```
 
-2. **Backend (Spring Boot)**  
-   Navigate to the `backend/` folder and run:
-    ```bash
-    mvn spring-boot:run
-    ```
-
-3. **Frontend (React)**  
-   Navigate to the `frontend/` folder and run:
-    ```bash
-    npm install
-    npm run dev
-    ```
 
 ---
 
