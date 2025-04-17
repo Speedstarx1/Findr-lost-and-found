@@ -9,5 +9,4 @@ public class FindrApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FindrApplication.class, args);
 	}
-
 }

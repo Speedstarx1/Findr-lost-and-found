@@ -1,65 +1,80 @@
 package com.example.findr.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import java.util.Collection;
+import java.util.Collections;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+
+@Data
+@EqualsAndHashCode(callSuper = true)
 @Document(collection = "users")
-public class User {
+public class User extends AuditableEntity implements UserDetails {
     @Id
     private String id;
+
+    @NotNull
     private String name;
+
+    @NotNull
+    @Indexed(unique = true, sparse = true)
     private Integer matriculationNo;
-    private Integer telephoneNo;
+
+    @NotNull
+    @Indexed(unique = true, sparse = true)
+    private String telephoneNo;
+
+    @NotNull
+    @Indexed(unique = true, sparse = true)
     private String email;
 
-    // No-Arg Constructor
-    public User() {}
+    @NotNull
+    private String password;
 
+    private boolean enabled = true;
+    private boolean accountNonExpired = true;
+    private boolean accountNonLocked = true;
+    private boolean credentialsNonExpired = true;
 
-    // Constructor
-    public User(String name, Integer matriculationNo, Integer telephoneNo, String email) {
-        this.name = name;
-        this.matriculationNo = matriculationNo;
-        this.telephoneNo = telephoneNo;
-        this.email = email;
+    @Override
+    public String getUsername() {
+        return email;
     }
 
-
-    // Getters
-    public String getId() {
-        return this.id;
+    @Override
+    public String getPassword() {
+        return password;
     }
 
-    public String getName() {
-        return this.name;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.emptyList();
     }
 
-    public Integer getMatriculationNo() {
-        return this.matriculationNo;
+    @Override
+    public boolean isAccountNonExpired() {
+        return accountNonExpired;
     }
 
-    public Integer getTelephoneNo() {
-        return this.telephoneNo;
+    @Override
+    public boolean isAccountNonLocked() {
+        return accountNonLocked;
     }
 
-    public String getEmail() {
-        return this.email;
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return credentialsNonExpired;
     }
 
-
-
-    // Setters
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public boolean isEnabled() {
+        return enabled;
     }
-    public void setMatriculationNo(Integer matriculationNo) {
-        this.matriculationNo = matriculationNo;
-    }
-    public void setTelephoneNo(Integer telephoneNo) {
-        this.telephoneNo = telephoneNo;
-    }
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
 }

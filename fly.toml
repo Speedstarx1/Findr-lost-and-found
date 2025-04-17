@@ -1,0 +1,26 @@
+# fly.toml app configuration file generated for findr-spring-sea-9539 on 2025-04-16T19:37:29+01:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'findr-spring-sea-9539'
+primary_region = 'cdg'
+
+[build]
+  dockerfile = 'Dockerfile'
+
+[env]
+  SERVER_PORT = '9090'
+
+[http_service]
+  internal_port = 9090
+  force_https = true
+  auto_stop_machines = 'stop'
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 512
