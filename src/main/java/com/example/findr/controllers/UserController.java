@@ -60,6 +60,13 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
+    @GetMapping("/me")
+    public ResponseEntity<UserResponseDTO> getCurrentUserProfile() {
+        User currentUser = userService.getCurrentUser();
+        UserResponseDTO response = convertToDTO(currentUser);
+        return ResponseEntity.ok(response);
+    }
+
     @GetMapping("/test")
     public Map<String, String> test() {
         return Map.of("status", "working");
