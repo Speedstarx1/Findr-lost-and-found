@@ -1,0 +1,58 @@
+.form {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 16px;
+    background: #fff5f5;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .header {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #d80060;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea,
+  input[type="file"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .submitBtn {
+    margin-top: 2rem;
+    background-color: #ff5f94;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .submitBtn:hover {
+    background-color: #d80060;
+  }
+  

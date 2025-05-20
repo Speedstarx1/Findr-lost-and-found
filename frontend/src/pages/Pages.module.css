@@ -1,0 +1,955 @@
+/* Base variables */
+:root {
+  --primary-blue: #2563eb;
+  --primary-dark: #1e40af;
+  --primary-light: #60a5fa;
+  --primary-lighter: #dbeafe;
+  --accent-color: #3b82f6;
+  --text-dark: #0f172a;
+  --text-medium: #334155;
+  --text-light: #64748b;
+  --background: #ffffff;
+  --background-alt: #f8fafc;
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --transition: all 0.3s ease;
+}
+
+/* Global styles */
+.wrapper {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
+    "Helvetica Neue", sans-serif;
+  color: var(--text-dark);
+  line-height: 1.5;
+  background-color: var(--background);
+}
+
+/* Header styles */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* backdrop-filter: blur(8px); */
+  box-shadow: var(--shadow-sm);
+}
+a{
+  text-decoration: none;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.logoSection {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.mapPinIcon {
+  color: var(--primary-blue);
+  width: 24px;
+  height: 24px;
+  margin-right: 0.5rem;
+}
+
+.logoText {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: -0.025em;
+}
+
+.authLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.signInBtn {
+  padding: 0.5rem 1.25rem;
+  background: transparent;
+  border: 1px solid var(--primary-blue);
+  color: var(--primary-blue);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.signInBtn:hover {
+  background-color: rgba(37, 99, 235, 0.05);
+  transform: translateY(-1px);
+}
+
+.signUpBtn {
+  padding: 0.5rem 1.25rem;
+  background: var(--primary-blue);
+  border: none;
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.signUpBtn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Main content */
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 180px);
+}
+
+/* Page header */
+.pageHeader {
+  background-color: var(--primary-blue);
+  color: white;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.pageSubtitle {
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0.9;
+}
+
+/* Content sections */
+.contentSection {
+  padding: 4rem 2rem;
+}
+
+.altSection {
+  background-color: var(--background-alt);
+}
+
+.sectionContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.centeredTitle {
+  text-align: center;
+}
+
+.sectionText {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.centeredText {
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About page specific styles */
+.aboutIntro {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.aboutImageWrapper {
+  position: relative;
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+}
+
+.aboutImageBackground {
+  width: 300px;
+  height: 300px;
+  background: linear-gradient(135deg, var(--primary-lighter) 0%, var(--primary-light) 100%);
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.aboutImageInnerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.aboutIcon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.aboutIntroText {
+  flex: 1;
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.valueCard {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.valueCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.valueIconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-lighter);
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.valueIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--primary-blue);
+}
+
+.valueTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.valueText {
+  color: var(--text-medium);
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.teamMember {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.teamMember:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.teamMemberImage {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--primary-lighter);
+}
+
+.teamMemberImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teamMemberName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.teamMemberRole {
+  font-size: 1rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.teamMemberBio {
+  color: var(--text-medium);
+  font-size: 0.95rem;
+}
+
+/* Contact page specific styles */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+.contactInfo {
+  padding-right: 2rem;
+}
+
+.contactMethods {
+  margin-top: 2rem;
+}
+
+.contactMethod {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.contactMethodIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-lighter);
+  border-radius: 50%;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.contactIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-blue);
+}
+
+.contactMethodDetails {
+  flex: 1;
+}
+
+.contactMethodTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.contactMethodText {
+  color: var(--text-medium);
+  margin-bottom: 0.25rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.socialLink:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.contactForm {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.formTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formLabel {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-medium);
+}
+
+.formInput,
+.formTextarea {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.formTextarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-blue);
+  border: none;
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+  margin-top: 1rem;
+}
+
+.submitButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.submitIcon {
+  transition: transform 0.2s ease;
+}
+
+.submitButton:hover .submitIcon {
+  transform: translateX(3px);
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.faqItem {
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.faqQuestion {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.faqAnswer {
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.inlineLink {
+  color: var(--primary-blue);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.inlineLink:hover {
+  text-decoration: underline;
+}
+
+/* Privacy and Terms page specific styles */
+.policyIntro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  background-color: var(--primary-lighter);
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+}
+
+.policyIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-blue);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.policyIcon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.policyIntroText {
+  flex: 1;
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.policySection {
+  margin-bottom: 3rem;
+}
+
+.policySectionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.policySectionIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--primary-blue);
+}
+
+.policySubsectionTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.5rem 0 1rem;
+  color: var(--text-dark);
+}
+
+.policySectionText {
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.policyList {
+  margin: 1rem 0 1.5rem 1.5rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+.policyList li {
+  margin-bottom: 0.5rem;
+}
+
+.policyContactInfo {
+  background-color: var(--background-alt);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  margin-top: 1.5rem;
+  color: var(--text-medium);
+  line-height: 1.6;
+}
+
+/* Campus list page specific styles */
+.campusSearchContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.campusSearch {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 0.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.campusSearchIcon {
+  color: var(--text-light);
+  margin-right: 1rem;
+}
+
+.campusSearchInput {
+  flex: 1;
+  border: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.campusSearchInput:focus {
+  outline: none;
+}
+
+.campusRegions {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.campusRegion {
+  margin-bottom: 1rem;
+}
+
+.regionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.regionIcon {
+  color: var(--primary-blue);
+}
+
+.campusList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.campusCard {
+  display: flex;
+  align-items: center;
+  background-color: var(--background);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.campusCard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.campusLogo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-lighter);
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.campusIcon {
+  width: 30px;
+  height: 30px;
+  color: var(--primary-blue);
+}
+
+.campusInfo {
+  flex: 1;
+}
+
+.campusName {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--text-dark);
+}
+
+.campusLocation {
+  font-size: 0.9rem;
+  color: var(--text-medium);
+  margin-bottom: 0.5rem;
+}
+
+.campusStats {
+  font-size: 0.85rem;
+  color: var(--primary-blue);
+  font-weight: 500;
+}
+
+.campusExpansion {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.expansionTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.expansionText {
+  color: var(--text-medium);
+  margin-bottom: 1.5rem;
+}
+
+.expansionButton {
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-blue);
+  border: none;
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.expansionButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* CTA section */
+.ctaSection {
+  background-color: var(--primary-lighter);
+  padding: 3rem 2rem;
+  margin: 4rem 0 0;
+  text-align: center;
+  border-radius: var(--radius-lg);
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaHeading {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.ctaText {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  margin-bottom: 2rem;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.ctaButton {
+  padding: 0.75rem 2rem;
+  background: var(--primary-blue);
+  border: none;
+  color: white;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.ctaButton:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--background-alt);
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footerLogo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.footerIcon {
+  color: var(--primary-blue);
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
+}
+
+.footerLogoText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.footerLinks {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerLink {
+  color: var(--text-medium);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footerLink:hover {
+  color: var(--primary-blue);
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.footerCopyright {
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+.footerTagline {
+  color: var(--text-light);
+  font-size: 0.875rem;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .aboutIntro {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .contactInfo {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .pageSubtitle {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .footerTop {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .policyIntro {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .headerContainer {
+    padding: 1rem;
+  }
+
+  .pageHeader {
+    padding: 2rem 1rem;
+  }
+
+  .contentSection {
+    padding: 3rem 1rem;
+  }
+
+  .campusList {
+    grid-template-columns: 1fr;
+  }
+}
