@@ -2,7 +2,7 @@
 
 🚀 Live Demo: https://findr-lime.vercel.app/
 
-📂 Frontend Repo: 
+📂 Frontend Repo: https://github.com/sylviaOsinaku/Findr
 
 ⚙️ Backend API: 
 
