@@ -4,7 +4,7 @@
 
 📂 Frontend Repo: https://github.com/sylviaOsinaku/Findr
 
-⚙️ Backend API: 
+⚙️ Backend API: https://github.com/Speedstarx1/Findr-Lost-and-Found-Management-System
 
 Findr is a demo project for a simple Lost & Found system, designed for educational purposes. This system allows **Seekers** to report lost items and **Finders** to submit found items. This project is not intended for public use but as a demo for a School project.
 ---
