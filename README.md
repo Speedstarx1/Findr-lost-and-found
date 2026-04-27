@@ -1,5 +1,11 @@
 # Findr - Lost & Found System
 
+🚀 Live Demo: https://findr-lime.vercel.app/
+
+📂 Frontend Repo: 
+
+⚙️ Backend API: 
+
 Findr is a demo project for a simple Lost & Found system, designed for educational purposes. This system allows **Seekers** to report lost items and **Finders** to submit found items. This project is not intended for public use but as a demo for a School project.
 ---
 
